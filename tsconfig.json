@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5", // or "es2020"
+    "module": "commonjs",
+    "lib": ["dom", "es2015", "es5", "es6", "es2020"],
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true, // allow import foo from "foo", not import * as foo from "foo"
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true
+  }
+}
