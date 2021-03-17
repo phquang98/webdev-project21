@@ -6,6 +6,7 @@ Practice example using TS + NodeJS + Express + MySQL
 
 - `npm run build`: build the whole project from TS -> JS
 - `npm start`: runs the server with nodemon
+- fake comment to fake merge conflicts
 
 ## Notes
 
