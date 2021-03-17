@@ -5,8 +5,8 @@ import { dbOps } from "../config/mysql";
 
 const NAMESPACE = "CONTROLLERS";
 
-const getAllUsers = (req: Request, res: Response, next: NextFunction) => {
-  let query = "SELECT * FROM users";
+const getAllPersons = (req: Request, res: Response, next: NextFunction) => {
+  let query = "SELECT * FROM participant";
 
   dbOps(query)
     .then((queryRes) => {
@@ -19,4 +19,12 @@ const getAllUsers = (req: Request, res: Response, next: NextFunction) => {
     });
 };
 
-export { getAllUsers };
+const getPerson = (req: Request, res: Response, next: NextFunction) => {};
+
+const editPersonByPersonID = (req: Request, res: Response, next: NextFunction) => {};
+
+const editPersonByPersonName = (req: Request, res: Response, next: NextFunction) => {};
+
+const deletePerson = (req: Request, res: Response, next: NextFunction) => {};
+
+export { getAllPersons };

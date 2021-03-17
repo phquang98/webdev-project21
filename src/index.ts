@@ -2,8 +2,8 @@ import express from "express";
 
 import logging from "./config/logging";
 import config from "./config/config";
-import { sampleRouter } from "./routes/sample";
-import { topLog, cors, notExisted } from "./middlewares/app";
+import { participantRouter } from "./routes/";
+import { topLog, cors, notExisted } from "./middlewares";
 
 const app = express();
 
@@ -14,9 +14,9 @@ app.use(topLog);
 app.use(cors);
 
 // --- Routing ---
-app.use("/sample", sampleRouter);
+app.use("/participant", participantRouter);
 
-// --- Error middlewares ---
+// --- Error Middlewares ---
 app.use(notExisted);
 
 app.listen(config.server.port, () =>
