@@ -1,7 +1,7 @@
 import express from "express";
 
-import { sampleHealthCheck } from "../controllers/sample";
+import { getAllUsers } from "../controllers/sample";
 
 export const sampleRouter = express.Router();
 
-sampleRouter.get("/ping", sampleHealthCheck);
+sampleRouter.get("/ping", getAllUsers);
