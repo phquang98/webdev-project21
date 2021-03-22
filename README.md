@@ -17,6 +17,7 @@ Practice example using TS + NodeJS + Express + MySQL
 - use `mysql2` instead of `mysql` -> some key points:
   - destruct after `query()`, only cares row data
   - `query()` dont have callback args
+- Postman POST HTTP remember Header Content-Type: application/json
 
 ## Fake SQL
 
@@ -44,3 +45,15 @@ INSERT INTO participant (first_name, last_name, participant_id, dob, email) VALU
   - build up an API
   - create a custom logging fncs
 - [Tutorial 2](https://www.youtube.com/watch?v=eTRSl1As83A&t=65s)
+
+## Draft
+
+- what happend if query OK, but dont return anything
+  - only handle logic based on query legit or not
+  - -> can return msg says Your query ok, but no res found
+- crud: when delete, validate query params first (e.g if id dont existed in db, msg back)
+  - backend should only focus only performing query execution
+- atm, mysql when delete entry, increment id not desirable outcome
+  - IRL: 1,2,3 -> delete 3 -> 1,2,4,5
+  - desired: 1,2,3 -> delete 3 -> 1,2,3,4
+- should try to update to pooling instead of single connection

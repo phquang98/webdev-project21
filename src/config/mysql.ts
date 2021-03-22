@@ -10,9 +10,11 @@ const ConnParams: ConnectionOptions = {
 };
 
 // Create a conn instance + connect() to the DB + execute the query
-const dbOps = async (queryValue: string) => {
+// 2nd arg: when writing prepared statment query aka ?/escape character
+const dbOps = async (queryValue: string, escapeValues?: any | any[] | { [param: string]: any }) => {
   const connInstance = mysql2.createConnection(ConnParams).promise();
-  return await connInstance.query(queryValue);
+  return connInstance.execute(queryValue, escapeValues);
+  // return await connInstance.query(queryValue);
 };
 
 export { dbOps };

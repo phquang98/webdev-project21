@@ -4,7 +4,7 @@ import logging from "../config/logging";
 
 const NAMESPACE = "App";
 
-// logs to console each time endpoint is visited
+// logs to console for any endpoint is visited
 const topLog = (req: Request, res: Response, next: NextFunction) => {
   logging.info(NAMESPACE, `METHOD - [${req.method}], URL - [${req.url}], IP - [${req.socket.remoteAddress}]`);
 
