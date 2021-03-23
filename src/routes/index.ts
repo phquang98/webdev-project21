@@ -6,6 +6,7 @@ import {
   createPerson,
   editPersonByPersonID,
   deletePersonByPersonID,
+  uploadXlsxDataToDB,
 } from "../controllers/participant";
 
 const participantRouter = express.Router();
@@ -16,6 +17,7 @@ participantRouter.get("/:participantId", getPersonByPersonID);
 
 // --- POST ---
 participantRouter.post("/", createPerson);
+participantRouter.post("/upload", uploadXlsxDataToDB); // maybe send the filePath from req.body ??
 
 // --- PUT ---
 participantRouter.put("/", editPersonByPersonID);

@@ -8,6 +8,16 @@ Practice example using TS + NodeJS + Express + MySQL
 - `npm start`: runs the server with nodemon
 - fake comment to fake merge conflicts
 
+## Todo
+
+- [x] create the server + custom helper fncs in configs
+  - [x] finish the MySQL conn
+  - [x] finnish the envi variables
+- [x] implemnet CRUD ops
+  - [] must have 9 CRUD actions based on RA Data Provider
+  - [x] manual testing ok through Postman
+- [ ] add prettier, eslint, githooks to project
+
 ## Notes
 
 - the vscode settings tells vscode to auto pick up prettier to be the format
@@ -18,6 +28,16 @@ Practice example using TS + NodeJS + Express + MySQL
   - destruct after `query()`, only cares row data
   - `query()` dont have callback args
 - Postman POST HTTP remember Header Content-Type: application/json
+- some problems with date format with Excel and xlxs
+  - <https://github.com/SheetJS/sheetjs/issues/718>
+  - <https://docs.sheetjs.com/> -> search `sheet_to_json`
+  - in Excel, date is tested with English(Fin) locale, format yyyy-mm-dd (to extract `w` props)
+  - without opts -> `{ t: 'n', v: 44276, w: '3/21/21' }`
+    - type number, v is raw value from Excel, w is formatted text
+  - `{cellDates: true;}` -> `{ t: 'd', v: 2021-03-22T21:59:56.000Z, w: '2021-03-23' }`
+    - type date, v is raw value, w is formmated text
+    - `{raw: false}` -> use `w` instead of `v`
+- dwl `ra-data-simple-rest` to know how to write a Data Provider for RA, del later
 
 ## Fake SQL
 
@@ -45,6 +65,8 @@ INSERT INTO participant (first_name, last_name, participant_id, dob, email) VALU
   - build up an API
   - create a custom logging fncs
 - [Tutorial 2](https://www.youtube.com/watch?v=eTRSl1As83A&t=65s)
+- xlsx
+  - <https://www.youtube.com/watch?v=tKz_ryychBY>
 
 ## Draft
 
